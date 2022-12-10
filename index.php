@@ -249,11 +249,8 @@
              timer: 1500
              
            }); 
-           setTimeout(() => {
-           
-             window.location.href='index.php';  
-             
-             
+           setTimeout(() => {       
+             window.location.href='index.php';   
          }, 1500);
                      
             </script>
@@ -283,14 +280,10 @@
     <style>
         .formulario-visible {
             display: none;
-
-
         }
 
         .formulario-oculto {
             display: block;
-
-
         }
 
         .boton-formulario-padding {
@@ -308,8 +301,7 @@
             
         }
         #tabla::-webkit-scrollbar:vertical {
-            width: 7px;
-            
+            width: 7px;        
         }
 
         #tabla::-webkit-scrollbar-thumb {
