@@ -17,35 +17,21 @@
 
     <div class="px-48 container w-100 text-2xl font-bold fixed mt-12">
         <ul class="flex justify-around">
-        <a href="roles.php">Roles</a>
-            <a href="login.php">Usuarios</a>
-            <a href="paises.php">Paises</a>
+        <a class="bg-blue-500 rounded-3xl py-2 px-4 border-dashed border-2 border-sky-500 hover:bg-blue-700" href="roles.php">Roles</a>
+            <a class="bg-blue-500 rounded-3xl py-2 px-4 border-dashed border-2 border-sky-500 hover:bg-blue-700" href="login.php">Usuarios</a>
+            <a class="bg-blue-500 rounded-3xl py-2 px-4 border-dashed border-2 border-sky-500 hover:bg-blue-700" href="paises.php">Paises</a>
         </ul>
     </div>
     <div class=" container flex p-28 gap-x-8">
 
         <div class="w-80">
             <button id="boton-formulario" class="bg-blue-500 flex hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded boton-formulario px-32 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300">Agregar </button>
-            <button id="boton-formulario" class="bg-blue-500 flex hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded boton-formulario    px-32 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300">Roles </button>
+           
 
             <form class="formulario-visible w-80 bg-white shadow-md rounded px-8 pt-6 pb-8  action=" method="post">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nombres</label><input required id="name" name="name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="descripcion">Nombres</label><input required id="descripcion" name="descripcion" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </br>
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="lastname">Apellidos</label><input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required id="lastname" name="lastname" type="text">
-                </br>
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="profession">Profesion</label><input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required id="profession" name="profession" type="text">
-                </br>
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="country">Pais</label>
-                <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="country" id="">
-                    <option value="" selected>Seleccione una opcion </option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Peru">Peru</option>
-                    <option value="Estados Unidos">Estados Unidos</option>
-                    <option value="Portugal">Portugal</option>
-                </select>
-                </br>
+              
                 <div class="flex justify-center bg-slate bg-slate-300 mt-2">
                     <button name="save" type="submit">Enviar</button>
                 </div>
@@ -86,18 +72,12 @@
         }
 
         if (isset($_POST['save'])) {
-            $nombres = $_POST['name'];
-            $apellidos = $_POST['lastname'];
-            $profesion = $_POST['profession'];
-            $pais = $_POST['country'];
-            $fregis = date('Y-m-d');
-            $queryInsertar = $coon->prepare("insert into tbl_personal (nombres, apellidos, profesion ,pais, fregis )
-         values(:nombres,:apellidos,:profesion,:pais,:fregis)");
-            $queryInsertar->bindParam(':nombres', $nombres, PDO::PARAM_STR);
-            $queryInsertar->bindParam(':apellidos', $apellidos, PDO::PARAM_STR);
-            $queryInsertar->bindParam(':profesion', $profesion, PDO::PARAM_STR);
-            $queryInsertar->bindParam(':pais', $pais, PDO::PARAM_STR);
-            $queryInsertar->bindParam(':fregis', $fregis, PDO::PARAM_STR);
+            $descripcion = $_POST['descripcion'];
+           
+            $queryInsertar = $coon->prepare("insert into roles (descripcion )
+         values(:descripcion)");
+            $queryInsertar->bindParam(':descripcion', $descripcion, PDO::PARAM_STR);
+     
             $queryInsertar->execute();
             $lastInsertId = $coon->lastInsertId();
             if ($lastInsertId > 0) {
@@ -134,7 +114,7 @@
             }
         }
         if (isset($_POST['delete'])) {
-            $queryEliminar = $coon->prepare('delete from tbl_personal where id = :id');
+            $queryEliminar = $coon->prepare('delete from roles where idRol = :id');
             $queryEliminar->bindParam(':id', $_POST['id']);
             if ($queryEliminar->execute()) {
 

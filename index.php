@@ -12,12 +12,27 @@
     <title>Document</title>
 </head>
 
-<body>
-    <form action="" method="post">
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="password" placeholder="password">
-        <button type="submit" name="login">Enviar</button>
-    </form>
+<body class="  bg-gradient-to-r from-slate-500 via-slate-400 to-slate-500">
+    <div class=" flex justify-center  items-center p-80">
+    <form class="block  formulario-visible w-80 bg-white shadow-md rounded px-8 pt-6 pb-8  action=" method="post">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Password</label><input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required id="username" name="username" type="text">
+              </br>
+         
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label><input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required id="password" name="password" type="text">
+              </br>
+              </br>
+            
+              <div class="flex justify-around  mt-2">
+                  <button class="bg-slate bg-blue-300 px-2 py-1 hover:bg-blue-700 rounded-2xl" name="login" type="submit">Enviar</button>
+          
+              </div>
+              </br>
+              <a class="text-blue-900" href="register.php">Registarse</a>
+          </form>
+          
+        
+    </div>
+    
     <?php
     include "./conexion.php";
 

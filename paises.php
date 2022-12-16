@@ -15,11 +15,11 @@
 
 <body class=" flex justify-center	 bg-gradient-to-r from-slate-500 via-slate-400 to-slate-500">
 
-    <div class="px-48 container w-100 text-2xl font-bold fixed mt-12">
+    <div class=" container w-100 text-2xl font-bold fixed mt-12">
         <ul class="flex justify-around">
-            <a href="roles.php">Roles</a>
-            <a href="login.php">Usuarios</a>
-            <a href="paises.php">Paises</a>
+            <a  class="bg-blue-500 rounded-3xl py-2 px-4 border-dashed border-2 border-sky-500 hover:bg-blue-700" href="roles.php">Roles</a>
+            <a class="bg-blue-500 rounded-3xl py-2 px-4 border-dashed border-2 border-sky-500 hover:bg-blue-700" href="login.php">Usuarios</a>
+            <a class="bg-blue-500 rounded-3xl py-2 px-4 border-dashed border-2 border-sky-500 hover:bg-blue-700" href="paises.php">Paises</a>
         </ul>
     </div>
     <div class=" container flex p-28 gap-x-8">
@@ -93,7 +93,7 @@
             
           }); 
           setTimeout(() => {
-            window.location.href='index.php';  
+            window.location.href='paises.php';  
         }, 1500);
                     
            </script>
@@ -109,7 +109,7 @@
             
           }); 
           setTimeout(() => {
-            window.location.href='index.php';  
+            window.location.href='paises.php';  
         }, 1500);    
            </script>
            ";
@@ -130,7 +130,7 @@
              
            }); 
            setTimeout(() => {
-             window.location.href='index.php';  
+             window.location.href='paises.php';  
          }, 1500);
                      
             </script>
@@ -146,7 +146,7 @@
              
            }); 
            setTimeout(() => {
-             window.location.href='index.php';  
+             window.location.href='paises.php';  
          }, 1500);    
             </script>
             ";
@@ -213,7 +213,7 @@
              
            }); 
            setTimeout(() => {       
-             window.location.href='pais.php';   
+             window.location.href='paises.php';   
          }, 1500);
                      
             </script>
@@ -229,7 +229,7 @@
              
            }); 
            setTimeout(() => {
-             window.location.href='pais.php'; 
+             window.location.href='paises.php'; 
              
          }, 1500);    
             </script>
@@ -279,6 +279,8 @@
         }
     </style>
     <script>
+        
+
         const botonFormulario = document.querySelector(".boton-formulario");
         const formulario = document.querySelector(".formulario-visible");
         const formularioEditar = document.getElementById('formulario-editar');
