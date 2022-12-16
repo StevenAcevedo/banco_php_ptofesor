@@ -6,7 +6,7 @@
     define('DB_HOST', 'localhost');
     define("DB_USER", "root");
     define('DB_PASS', 'Mysql.777');
-    define('DB_NAME', 'php_insertarpdo');
+    define('DB_NAME', 'crud_php');
     //Establecer la Conexión
 
     try {
